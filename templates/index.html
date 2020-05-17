@@ -6,26 +6,60 @@
 		<head>
 		<title>nav.igate</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-		<link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-au-compatible" content="ie=edge">
+
+		<link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/node_modules/font-awesome/css/font-awesome.min.css">
+		<link rel="shortcut icon" type="image/png" href="static/images/favicon.png">
 		
 
-
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Montserrat';font-size: 22px;
+}
+</style>
 
 
 		<meta name="google-signin-scope" content="profile email">
-   		<meta name="google-signin-client_id" content="288386699339-85smquqjjueqpfgh74l9p5hbrv23qrpu.apps.googleusercontent.com">
+   	<meta name="google-signin-client_id" content="288386699339-85smquqjjueqpfgh74l9p5hbrv23qrpu.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="https://apis.google.com/js/api.js"></script>
 		
 	</head>
 
 
-<body style="background-color:rgb(41, 151, 234);">
+<body style="background-color:rgb(41, 151, 234); font-family: 'Montserrat'">
+<img src="../static/images/iphone.png"  style="float:right;position:relative; bottom: -200px;left: -150px; font-family: 'Montserrat'">
 
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+           
+           
+
+        <a href="#" class="navbar-left"><img src="../static/images/Logo.png" style="height:50px; width: 66px; float:left"></a>
+
+           
+
+
+
+          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>
+              Home</a></li>
+          <li class="nav-item"><a class="nav-link" href={{ url_for('calendar') }}><span class="fa fa-calendar"></span>
+              Calendar</a></li>
+          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="align-self:center;"></div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -42,7 +76,7 @@
         console.log("ID Token: " + id_token);
       }
     </script>
-<a href="#" onclick="signOut();">Sign out</a>
+<a href="#" onclick="signOut();" style="font-family: 'Montserrat'">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -55,11 +89,13 @@
 
 
 <div id="text" style = "position:relative; bottom: -200px;">
-  <p style="font-family: Times New Roman; font-size: 50px; left: 10px;">Welcome to nav.igate. <br/>The world's first <br/>interactive location planner.</p>
+  <p style="font-family: 'Montserrat'; font-size: 50px; left: 10px;color:white;">Welcome to nav.igate. <br/>The world's first <br/>interactive location planner.</p>
 
 </div>
 
 
-
+  <script src="/static/node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="/static/node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
